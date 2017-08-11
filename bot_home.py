@@ -19,7 +19,7 @@ def error(bot, update, error):
 
 
 config = configparser.ConfigParser()
-config.read('bot.ini')
+config.read('bot_home.ini')
 
 bot = telebot.TeleBot(config['KEYS']['bot_api'])
 admins = config['ADMINS']['admins'].split(',')
