@@ -1,0 +1,7 @@
+[KEYS]
+bot_api = 111111:ABCDEF1234567890
+[ADMINS]
+admins = 123123123
+[MQTT]
+host = 192.168.0.100
+port = 1883
