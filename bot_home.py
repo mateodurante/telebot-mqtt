@@ -9,6 +9,8 @@ import logging
 import configparser
 import paho.mqtt.client as mqtt
 
+logging.getLogger("requests").setLevel(logging.WARNING)
+
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
