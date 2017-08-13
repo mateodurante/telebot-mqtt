@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# pip3 install pyTelegramBotAPI
+# pip3 install paho-mqtt
 
 import telebot
 from telebot import types
@@ -8,6 +10,7 @@ import requests
 import logging
 import configparser
 import paho.mqtt.client as mqtt
+import sys
 
 logging.getLogger("requests").setLevel(logging.WARNING)
 
@@ -19,9 +22,8 @@ logger = logging.getLogger(__name__)
 def error(bot, update, error):
     logger.warn('Update "%s" caused error "%s"' % (update, error))
 
-
 config = configparser.ConfigParser()
-config.read('bot_home.ini')
+config.read(sys.path[0]+'/bot_home.ini')
 
 bot = telebot.TeleBot(config['KEYS']['bot_api'])
 admins = config['ADMINS']['admins'].split(',')
